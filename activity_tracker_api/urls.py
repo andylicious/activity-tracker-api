@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from activity_tracker_api.activity_tracker_api.activity_app.views import activity_list_view
+from activity_tracker_api.activity_app.views import activity_list_view, common_activities_view
 
 app_name = "activity_app"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('activities/', activity_list_view, name="activities"),
+    path('activities/common', common_activities_view, name="common-activities"),
 ]
