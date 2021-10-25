@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from rest_framework import generics, views
 from .serializers import ActivitySerializer, CommonActivitiesSerializer
 from .models import Activity
+from .authentication import BearerTokenAuthentication
 
 
 class ActivityListView(generics.ListCreateAPIView):

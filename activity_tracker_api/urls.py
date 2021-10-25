@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from activity_tracker_api.activity_app.views import activity_list_view, common_activities_view
+from rest_framework.authtoken import views
 
 app_name = "activity_app"
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-token-auth/', views.obtain_auth_token),
     path('activities/', activity_list_view, name="activities"),
-    path('activities/common', common_activities_view, name="common-activities"),
+    path('activities/common/', common_activities_view, name="common-activities"),
 ]
