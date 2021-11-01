@@ -21,7 +21,7 @@ from rest_framework.authtoken import views
 app_name = "activity_app"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-token-auth/', views.obtain_auth_token),
+    path('login/', views.obtain_auth_token),
     path('activities/', activity_list_view, name="activities"),
     path('activities/common/', common_activities_view, name="common-activities"),
 ]
